@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-PricingApplication<pricing>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.apexrate.pricing.PricingApplication",
+            "projectName": "pricing",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: product-pricing-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/apexrate_db
+    username: apex_user
+    password: apex_password
+    driver-class-name: org.postgresql.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        '[format_sql]': true
+    defer-datasource-initialization: true # Runs data.sql after hibernate creates the schema
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    
+  sql:
+    init:
+      mode: always
+    
